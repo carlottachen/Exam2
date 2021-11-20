@@ -51,6 +51,7 @@ let pizza = {
 
 //CODE HERE
 
+console.log('\nPROBLEM 2');
 console.log(pizza.popularity);
 
 /*
@@ -62,6 +63,7 @@ console.log(pizza.popularity);
 
 //CODE HERE
 
+console.log('\nPROBLEM 2');
 console.log(pizza.tags[1]);
 
 /*
@@ -74,6 +76,7 @@ console.log(pizza.tags[1]);
 //CODE HERE
 
 const{price: pizzaPrice} = pizza; 
+console.log('\nPROBLEM 2');
 console.log(pizzaPrice);
 
 /*
@@ -86,6 +89,7 @@ console.log(pizzaPrice);
 //CODE HERE
 
 const{category: pizzaCategory} = pizza;
+console.log('\nPROBLEM 2');
 console.log(pizzaCategory);
 
 //////////////////PROBLEM 3////////////////////
@@ -116,7 +120,7 @@ let foodArr =  [
 		price : 10.50,
 		category : 'entree',
 		popularity : 3,
-		rating : 8,
+		rating : 6,
 		tags : ['pineapples', 'fruit']
 	},
 	{
@@ -124,7 +128,7 @@ let foodArr =  [
 		price : 11,
 		category : 'favorites',
 		popularity : 10,
-		rating : 9,
+		rating : 2,
 		tags : ['family favorite', 'classic', 'not vegetarian']
 	},
 	{
@@ -158,9 +162,13 @@ let foodArr =  [
 */
 
 //CODE HERE
+/*
 const filteredFood = foodArr.filter(function(foodTag){
 	return foodTag.tags.includes("family favorites");
 })
+*/
+const filteredFood = foodArr.filter(findTag => findTag.tags.includes('family favorite'));
+console.log('\nPROBLEM 4');
 console.log(filteredFood);
 
 //////////////////PROBLEM 5////////////////////
@@ -203,10 +211,22 @@ console.log(filteredFood);
 */
 
 //CODE HERE
-function filterByProperty(property, number, type){
-	let filtered = [];
 
-}
+const filterByProperty = (property, number, type) => {
+	const filterFood = foodArr.filter((elem) => {
+		if(type === 'above'){
+			//when accessing string in a
+			//property of an object, must use
+			//bracket notation
+			//console.log(elem[property]);
+			return elem[property] > number;
+		}else if(type === 'below'){
+			return elem[property] < number;
+		};
+	});
+	return filterFood;
+};
+
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
@@ -215,3 +235,7 @@ function filterByProperty(property, number, type){
 */
 
 //CODE HERE
+
+console.log('\nPROBLEM 5');
+console.log(filterByProperty('rating', 7, 'below'));
+

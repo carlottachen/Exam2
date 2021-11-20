@@ -72,6 +72,11 @@ console.log(empTwo.name);
 empTwo.name = "Nick";
 console.log(empTwo.name);
 
+
+//can do it this way also:
+const empThree = {...empTwo, name: "Nick"}
+console.log(empThree.name);
+
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a class called Manager that *extends* 
@@ -97,6 +102,18 @@ console.log(empTwo.name);
 
 //CODE HERE
 
+class Manager extends Employee{
+	constructor(name, shifts, employees){
+		super(name, shifts);
+		this.employees = employees;
+	};
+	getEmployees(){
+		console.log(`${this.name} manages ${this.employees}`);
+	};
+	addEmployee(emp){
+		this.employees.push(emp);
+	};
+};
 
 
 /*
@@ -111,7 +128,7 @@ console.log(empTwo.name);
 */
 
 //CODE HERE
-
+let manager = new Manager("Peter", "Monday - Friday, afternoons", ["Carles", "Minna", "Andrew"]);
 
 /*
     Call the `getEmployees` method on the
@@ -119,6 +136,7 @@ console.log(empTwo.name);
 */
 
 //CODE HERE
+manager.getEmployees();
 
 /*
     Call the `addEmployee` method on the 
@@ -128,6 +146,8 @@ console.log(empTwo.name);
 
 //CODE HERE 
 
+manager.addEmployee("Carlotta");
+
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -135,3 +155,6 @@ console.log(empTwo.name);
 */
 
 //CODE HERE
+manager.getEmployees();
+
+

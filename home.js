@@ -24,6 +24,7 @@
 //CODE HERE
 
 const greetUser = (username) => `Welcome back, ${username}`;
+console.log('\n PROBLEM 1');
 console.log(greetUser('Carlotta'));
 
 
@@ -55,10 +56,11 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 function canWeDeliver(zipCode){
 	for(let i=0; i<deliveryAreaZipCodes.length; i++){
 		if(zipCode === deliveryAreaZipCodes[i])
-			return true;
+			return `You're in our delivery zone!`;
 	}
-	return false;
+	return `Sorry, we can't deliver to that address`;
 }
+console.log('\n PROBLEM 2');
 console.log(canWeDeliver(97015));
 console.log(canWeDeliver(85204));
 
@@ -82,11 +84,12 @@ console.log(canWeDeliver(85204));
 // CODE HERE
 const canWeDeliverTwo = zipCode => {
 	if(deliveryAreaZipCodes.includes(zipCode))
-		return true;
+		return `You're in our delivery zone!`;
 	else
-		return false;
+		return `Sorry, we can't deliver to that address`;
 }
 
+console.log('\n PROBLEM 2 CONTINUED');
 console.log(canWeDeliverTwo(97015));
 console.log(canWeDeliverTwo(85206));
 
@@ -124,7 +127,7 @@ const deals = [
     */
 
 //CODE HERE
-
+/*
 function findStr(){
 	for(let i = 0; i < deals.length; i++){
 		if(deals[i].title.includes('15')){
@@ -138,7 +141,13 @@ function findStr(){
 		}
 	}
 }
-findStr();
+*/
+console.log('\n PROBLEM 3');
+//findStr();
+//Don't need to loop through and find it, just go directly
+//to index in the array
+deals[0].title = deals[0].title.replace('15', '10');
+console.log(deals);
 
 /*
     The restaurant is going to continue its
@@ -154,7 +163,7 @@ findStr();
     */
 
 //CODE HERE
-
+/*
 function findMonth(){
 	for(let i = 0; i < deals.length; i++){
 //		console.log(deals[i].desc);
@@ -169,7 +178,13 @@ function findMonth(){
 		}
 	}
 }
+*/
+console.log('\n PROBLEM 3 CONTINUED');
+//findMonth();
+deals[1].desc = deals[1].desc.replace('March', 'April').trim();
+console.log(deals);
 
-findMonth();
+
+
 
 

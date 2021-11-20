@@ -56,14 +56,14 @@ console.log(summedPrice);
 */
 
 //CODE HERE
-function calcFinalPrice(cartTotal, couponValue, tax){
-	cartTotal = cartTotal + (cartTotal * tax);
-	cartTotal -= couponValue;
-	console.log(cartTotal);
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+	const result = (cartTotal += (cartTotal * tax)) - couponValue;
+	return result;
 }
 let cartTotal = summedPrice.price;
 
-calcFinalPrice(cartTotal, 3, .07);
+console.log('\nPROBLEM 2');
+console.log(calcFinalPrice(10, 2, .05));
 
 	//////////////////PROBLEM 3////////////////////
 /*  
@@ -87,7 +87,10 @@ calcFinalPrice(cartTotal, 3, .07);
 
 /*
     TEXT ANSWER HERE
-
+    fullName(string)
+    phone(string)
+    orderedBefore(number)
+    delivery(bool)
 */
 
 /*
@@ -95,4 +98,12 @@ calcFinalPrice(cartTotal, 3, .07);
     guidelines.
 */
 
-//CODE HERE
+const customer = {
+	fullName: "Carlotta Chen",
+	phone: "123-456-7890",
+	orderedBefore: 5,
+	delivery: false
+}
+
+
+
